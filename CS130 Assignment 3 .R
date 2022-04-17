@@ -428,31 +428,31 @@ mb <- MatchBalance(foo_small$treat~
 
 #Question 3 
 
-install.packages("sensemakr")
+#install.packages("sensemakr")
 library(sensemakr)
 
 #For the Indonesia Case Study 
 t  = 0.0037439 	 #t-statistic from the output of mb
-dof = 999 * 15 #degrees of freedom, nrows - 1 * ncolumns - 1
+dof = 999 - 15 #degrees of freedom, nrows - ncolumns - 1
 robustness_value(t_statistic = t, dof = dof)
-#3.058364e-05
+#0.0001193441
 
 #For the Daughters Case Study, Part A 
 t  = 0.48519 #t-statistic from the output of mb
-dof = 429 * 5 #degrees of freedom, nrows - 1 * ncolumns - 1
+dof = 429 - 5 #degrees of freedom, nrows - ncolumns - 1
 robustness_value(t_statistic = t, dof = dof)
-#0.01042133
+#0.02328694
 
 
 #For the Daughters Case Study, Part B
 t  = 3.0869 	 #t-statistic from the output of mb
-dof = 83 * 5 #degrees of freedom, nrows - 1 * ncolumns - 1
+dof = 83 - 5 #degrees of freedom, nrows - ncolumns - 1
 robustness_value(t_statistic = t, dof = dof)
-#0.1404836
+#0.2937369
 
 #For the Daughters Case Study, Bonus 
 t  =2.3924 	 #t-statistic from the output of mb
-dof = 83 * 9 #degrees of freedom, nrows - 1 * ncolumns - 1
+dof = 83 - 9 #degrees of freedom, nrows - ncolumns - 1
 robustness_value(t_statistic = t, dof = dof)
 #0.08378609
 
