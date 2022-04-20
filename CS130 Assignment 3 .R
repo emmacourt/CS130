@@ -26,14 +26,14 @@ mb_after <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + d
 #Genetic Matching, M=2
 genout2 <- GenMatch(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), pop.size = 20, nboots = 250, M=2)
 
-mout2 <- Match(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), Weight.matrix = genout2)
+mout2 <- Match(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), Weight.matrix = genout2, M=2)
 
 mb_after2 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote, data = foo, match.out = mout2)
 
 #Genetic Matching, M=3
 genout3 <- GenMatch(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), pop.size = 20, nboots = 250, M=3)
 
-mout3 <- Match(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), Weight.matrix = genout3)
+mout3 <- Match(Tr = foo$hasgirls, X = cbind(foo$Dems, foo$Repubs, foo$Christian, foo$age, foo$srvlng, foo$demvote), Weight.matrix = genout3, M=3)
 
 mb_after3 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote, data = foo, match.out = mout3)
 
@@ -83,14 +83,14 @@ mb_after_new1 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvln
 #Genetic Matching, M=2
 genout_new2 <- GenMatch(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), pop.size = 20, nboots = 250, M=2)
 
-mout_new2 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), Weight.matrix = genout_new2)
+mout_new2 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), Weight.matrix = genout_new2, M=2)
 
 mb_after_new2 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote, data = foo_subset, match.out = mout_new2)
 
 #Genetic Matching, M=3
 genout_new3 <- GenMatch(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), pop.size = 20, nboots = 250, M=3)
 
-mout_new3 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), Weight.matrix = genout_new3)
+mout_new3 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote), Weight.matrix = genout_new3, M=3)
 
 mb_after_new3 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote, data = foo_subset, match.out = mout_new3)
 
@@ -141,14 +141,14 @@ mb_after_new1 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvln
 #Genetic Matching, M=2
 genout_new2 <- GenMatch(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), pop.size = 20, nboots = 250, M=2)
 
-mout_new2 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), Weight.matrix = genout_new2)
+mout_new2 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), Weight.matrix = genout_new2, M=2)
 
 mb_after_new2 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote + white + protgay + moredef + morecrimesp, data = foo_subset, match.out = mout_new2)
 
 #Genetic Matching, M=3
 genout_new3 <- GenMatch(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), pop.size = 20, nboots = 250, M=3)
 
-mout_new3 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), Weight.matrix = genout_new3)
+mout_new3 <- Match(Tr = foo_subset$hasgirls, X = cbind(foo_subset$Dems, foo_subset$Repubs, foo_subset$Christian, foo_subset$age, foo_subset$srvlng, foo_subset$demvote, foo_subset$white, foo_subset$protgay, foo_subset$moredef, foo_subset$morecrimesp), Weight.matrix = genout_new3, M=3)
 
 mb_after_new3 <- MatchBalance(hasgirls ~ Dems + Repubs + Christian + age + srvlng + demvote + white + protgay + moredef + morecrimesp, data = foo_subset, match.out = mout_new3)
 
@@ -455,6 +455,9 @@ t  =2.3924 	 #t-statistic from the output of mb
 dof = 83 - 9 #degrees of freedom, nrows - ncolumns - 1
 robustness_value(t_statistic = t, dof = dof)
 #0.08378609
+
+
+
 
 
 
