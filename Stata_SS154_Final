@@ -1,0 +1,36 @@
+clear
+
+import delimited "/Users/emmaclairecourtney/Desktop/Data for SS154/US_COVID.csv", clear 
+
+ xtset state_dummy year_dumm
+
+ xtreg rep_votes covid_cases voter_turnout state_unemployment, fe
+
+
+
+clear 
+
+import delimited "/Users/emmaclairecourtney/Desktop/Data for SS154/OHIO_COVID.csv"
+
+xtset county_dummy year_dummy 
+  
+xtreg percent_trump covid_cases voter_turnout, fe
+
+
+
+clear
+
+import delimited "/Users/emmaclairecourtney/Desktop/Data for SS154/OHIO_COVID_LOW.csv", clear 
+ 
+ xtset county_dummy year_dummy
+ 
+xtreg percent_trump covid_cases voter_turnout, fe
+
+  
+  clear
+  
+  import delimited "/Users/emmaclairecourtney/Desktop/Data for SS154/OHIO_COVID_HIGH.csv", clear 
+ 
+ xtset county_dummy year_dummy
+ 
+xtreg percent_trump covid_cases voter_turnout, fe
